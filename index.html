@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌋 QUADRANTES - Jogo das Catástrofes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header com informações dos jogadores -->
+        <header class="game-header">
+            <h1>⚔️ QUADRANTES: Sobrevivência Dinâmica</h1>
+            <div class="players-status">
+                <div class="player-card" id="player1-card">
+                    <span class="player-name">JOGADOR 1</span>
+                    <span class="player-score" id="score1">0</span>
+                    <div class="player-items" id="items1"></div>
+                </div>
+                <div class="player-card" id="player2-card">
+                    <span class="player-name">JOGADOR 2</span>
+                    <span class="player-score" id="score2">0</span>
+                    <div class="player-items" id="items2"></div>
+                </div>
+                <div class="player-card" id="player3-card">
+                    <span class="player-name">JOGADOR 3</span>
+                    <span class="player-score" id="score3">0</span>
+                    <div class="player-items" id="items3"></div>
+                </div>
+                <div class="player-card" id="player4-card">
+                    <span class="player-name">JOGADOR 4</span>
+                    <span class="player-score" id="score4">0</span>
+                    <div class="player-items" id="items4"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Área principal do jogo - CANVAS -->
+        <main class="game-main">
+            <canvas id="gameCanvas" width="1000" height="800"></canvas>
+            
+            <!-- Overlay de eventos ativos -->
+            <div id="eventOverlay" class="event-overlay">
+                <div id="currentEvent" class="current-event"></div>
+                <div id="eventTimer" class="event-timer"></div>
+            </div>
+            
+            <!-- HUD de alertas -->
+            <div id="alertContainer" class="alert-container"></div>
+        </main>
+
+        <!-- Painel de controles -->
+        <footer class="game-footer">
+            <div class="controls-info">
+                <div class="control-group">
+                    <h3>🎮 CONTROLES</h3>
+                    <div class="quadrant-controls">
+                        <div class="control-item">
+                            <span class="key">W A S D</span>
+                            <span>Jogador 1 (Azul)</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="key">⬆️⬅️⬇️➡️</span>
+                            <span>Jogador 2 (Vermelho)</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="key">I J K L</span>
+                            <span>Jogador 3 (Verde)</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="key">T F G H</span>
+                            <span>Jogador 4 (Amarelo)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button id="startGameBtn" class="btn-start">INICIAR JOGO</button>
+                    <button id="pauseBtn" class="btn-pause">⏸️ PAUSAR</button>
+                    <button id="resetBtn" class="btn-reset">🔄 RESET</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="utils.js"></script>
+    <script src="entities.js"></script>
+    <script src="physics.js"></script>
+    <script src="events.js"></script>
+    <script src="render.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
